@@ -1,0 +1,68 @@
+<!-- RD_texting/templates/RD_texting/home.html -->
+{% extends "RD_texting/base.html" %}
+{% load static %}
+
+{% block content %}
+    
+    
+
+<!-- Form Section -->
+<div class = "content-bg">
+<section>
+    <form id="userInfoForm" action="#">
+    
+
+        
+        <div>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+        </div>
+        <div>
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" name="company" placeholder="Enter your company's name">
+        </div>
+        <div>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+        </div>
+        <div>
+            <input type="submit" value="save">
+        </div>
+    </div>
+    </form>
+    
+    <div id="advertisingOptions" style="display:none;">
+        <label>Choose where you want to advertise:</label>
+        <div>
+            <input type="radio" id="north" name="adLocation" value="north">
+            <label for="north">North</label>
+        </div>
+        <div>
+            <input type="radio" id="south" name="adLocation" value="south">
+            <label for="south">South</label>
+        </div>
+        <div>
+            <input type="radio" id="center" name="adLocation" value="center">
+            <label for="center">Center</label>
+        </div>
+    
+</section>
+</div>
+
+
+
+
+    <div class="how-it-works-bg">
+        <h1>How it works?</h1>
+        <p> web application that empowers users to customize text/email messaging campaigns.<br>
+        Leveraging existing messaging APIs like Twilio, this web application allows users to define message content<br>
+        target audiences (including age, area, etc.), and message frequencies, including recurring messages.<br>
+        This flexibility sets it apart from platforms that offer messaging services without recurring and customizable options.</p>
+    </div>
+
+    <script src="{% static 'js/java_script.js' %}"></script>
+
+</body>
+</html>
+    
+{% endblock content %}

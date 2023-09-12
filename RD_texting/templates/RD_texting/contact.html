@@ -1,0 +1,59 @@
+{% extends "RD_texting/base.html" %}
+{% load crispy_forms_tags %}
+{%load static%}
+{% block content %}
+
+
+    
+    <header>
+        <h1 class="campaign-welcome">Need some help or want to give feedback?</h1>
+        
+    </header>
+
+    <body>
+    <!-- Feedback Form and Display section -->
+    <section>
+        <div class="feedback-form">
+            <button id="confirmSelections">Confirm Selections</button>
+
+            <h2>Leave Your Feedback:</h2>
+            <!-- Star Rating System -->
+            <div class="star-rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+            <textarea id="feedbackText" rows="4" cols="50" placeholder="Write your feedback here..."></textarea><br>
+            <button id="submitFeedback">Submit Feedback</button>
+            <button id="changeSelections">Change Selections</button>
+        </div>
+        <div class="video-container">
+            <video  autoplay muted loop>
+                <source src="{% static 'js/rating-video.mp4' %}" type="video/mp4">
+
+                
+            </video>
+        </div>
+        
+        <div class="feedback-display">
+            <h2>Feedbacks:</h2>
+            <ul id="feedbackList">
+                <!-- Feedbacks will appear here -->
+            </ul>
+        </div>
+    </section>
+
+    <footer>--</footer>
+
+    <h1>Contact one of our site administrators:</h1>
+    <p><strong>&nbsp;Roei Aviv:</strong><br> &nbsp; Email- roy4050@gmail.com<br>&nbsp; Phone- 0548199961</p>
+    <p><strong>&nbsp;David Makrs:</strong><br>&nbsp; Email- Dovidyl@gmail.com<br>&nbsp; Phone- 0587701122</p>
+     <script src="{% static 'js/java_script.js' %}"></script>
+    </body>
+
+    
+{%endblock%}
+
+  

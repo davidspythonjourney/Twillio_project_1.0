@@ -1,0 +1,79 @@
+{% extends "RD_texting/base.html" %}
+{% load static %}
+{% block content %}
+
+    <section>
+        <h2>Ad details</h2>
+
+        <!-- Location -->
+        <label><input type="checkbox" name="location" value="North">&nbsp;&nbsp; North&nbsp;</label>
+        <label><input type="checkbox" name="location" value="South"> &nbsp;South&nbsp;&nbsp;</label>
+        <label><input type="checkbox" name="location" value="Central"> Central&nbsp;</label>
+        <button id="submitLocation">Submit</button>
+        
+        <div id="cities"></div>
+
+        <!-- Age Groups -->
+        <div id="ageSelectionContainer" style="display: none;">
+            <label><input type="checkbox" name="ageGroup" value="14-17"> 14-17</label>
+            <label><input type="checkbox" name="ageGroup" value="18-24"> 18-24</label>
+            <label><input type="checkbox" name="ageGroup" value="25-29"> 25-29</label>
+            <label><input type="checkbox" name="ageGroup" value="30+"> 30+</label>
+        </div>
+        
+        <!-- Audience Size -->
+        <div id="audienceSizeContainer" style="display:none;">
+            <h2>Select your target audience size:</h2>
+            <label><input type="radio" name="audienceSize" value="1K-10K"> 1K-10K</label><br>
+            <label><input type="radio" name="audienceSize" value="10K-25K"> 10K-25K</label><br>
+            <label><input type="radio" name="audienceSize" value="25K-50K"> 25K-50K</label><br>
+            <label><input type="radio" name="audienceSize" value="50K-100K"> 50K-100K</label><br>
+            <label><input type="radio" name="audienceSize" value="100K+"> 100K+</label><br>
+            <button id="audienceSizeSubmit">Confirm Audience Size</button>
+        </div>
+        <!-- Frequency of Sending Message -->
+        <div id="frequencyContainer" style="display:none;">
+            <h2>Select how often you want to send the message:</h2>
+            <label><input type="radio" name="frequency" value="each_day"> Each day</label><br>
+            <label><input type="radio" name="frequency" value="4_days"> Every 4 days</label><br>
+            <label><input type="radio" name="frequency" value="1_week"> Once a week</label><br>
+            <label><input type="radio" name="frequency" value="1_month"> Once a month</label><br>
+            <label><input type="radio" name="frequency" value="not_again"> One time service</label><br>
+            <button id="frequencySubmit">Confirm Frequency</button>
+        </div>
+
+                
+        <!-- Summary container -->
+        <div id="summaryContainer" style="display: none;">
+            <h3>Your Selections:</h3>
+            <p id="summary"></p>
+            <button id="changeSelections">Change Selections</button>
+            <button id="confirmSelections">Confirm</button>
+        </div>
+        
+        <!-- Advertisement Input -->
+        <div id="advertisementInput" style="display: none;">
+            <h3>Write your Advertisement:</h3>
+            <label for="adTitle"> Ad Title:</label>
+            <input type="text" id="adTitle" name= "adTitle" placeholder="Enter the ad title...">
+
+            <label for="adContent">Content:</label>
+            <textarea id="adContent" rows="5" placeholder="Enter the content of your ad..."></textarea>
+
+            <button id="submitAd">Submit Advertisement</button>
+        </div>
+
+        
+
+        
+    </section>
+
+    {% block scripts %}
+    <script src="{% static 'js/java_script.js' %}"></script>
+    {% endblock %}
+    
+   
+
+
+{% endblock content %}
+
