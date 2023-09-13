@@ -18,6 +18,7 @@ To run the code, you must install the following dependencies:
 - Pandas
 - Celery
 - Twillio
+- dotenc
 
 
 ### Configuration
