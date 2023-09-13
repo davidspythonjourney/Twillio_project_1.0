@@ -16,8 +16,9 @@ To run the code, you must install the following dependencies:
 - Django-Crispy-Forms 
 - Django-Import-Export
 - Pandas
--Celery
--Twillio
+- Celery
+- Twillio
+
 
 ### Configuration
 
