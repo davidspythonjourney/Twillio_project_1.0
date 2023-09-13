@@ -6,7 +6,17 @@ body {
   padding: 0;
   background-color: #84c3de;
 }
-
+button{
+  cursor: pointer;
+  border-width: 0px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: -2px 4px 7px 0px rgba(0,0,0,0.75);
+}
+textarea, input{
+  border-radius: 7px;
+  }
 header {
   background: black;
   background-image: url("thisimage.jpeg");
@@ -81,6 +91,8 @@ div {
 }
 
 .feedback-display {
+  height: 300px;
+  overflow: auto;
   background-color: #fff;
   padding: 20px;
   margin: 20px;
@@ -250,3 +262,18 @@ video {
   display: block; /* To ensure it takes up full width */
 }
 
+.logged-out-bg {
+  background-image: url('{% static "pexels-photo-3825306.jpeg" %}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 400px;
+  padding: 20px;
+}
+
+.Req.Format {
+
+  width: 100px;  /* Or any desired width */
+  height: auto;  /* To maintain the aspect ratio */
+  /* Add any other styles you want for the image here */
+}

@@ -1,13 +1,16 @@
 {% extends "RD_texting/base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
+
 {% block content %}
     </header>
-    <h2> you have been logged out</h2>
-        <div class="border-top pt-3">
-          <small class="text-muted">
-            <a  href="{% url 'login' %}">Log in again</a>
-
-          </small>  
-        </div>
+    <div class="logged-out-bg">
+        <h2> you have been logged out</h2>
         
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                <a href="{% url 'login' %}">Log in again</a>
+            </small>  
+        </div>
+    </div>    
 {% endblock content %}

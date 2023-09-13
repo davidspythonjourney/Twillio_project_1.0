@@ -1,8 +1,12 @@
 {% extends "RD_texting/base.html" %}
+{% load crispy_forms_tags static %}
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <h1>File Upload</h1>
+  <h1><strong><u>File Upload</u></strong></h1>
+    <h3> Requirement Format example:</h3>
+  <img src="{% static 'js/Req_Format.jpg' %}" alt="Requirement Format" class="Req.Format">
+
   {% if error_message %}
     <div class="alert alert-danger">
       {{ error_message }}
@@ -16,4 +20,5 @@
 
     <button type="submit">Upload Excel File</button>
   </form>
+  
 {% endblock %}

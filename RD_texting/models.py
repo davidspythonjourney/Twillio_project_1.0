@@ -22,8 +22,8 @@ class Campaign(models.Model):
 
 class UploadedFile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
-    phone_number = models.PositiveIntegerField(default=123456789)  
-    email = models.CharField(max_length=255, default="example@example.com")  
+    phone_number = models.PositiveIntegerField(default=123456789, unique=True)  
+    email = models.CharField(max_length=255, default="example@example.com", unique=True)  
     name = models.CharField(max_length=255, default="Default Name")  
     description = models.TextField(blank=True, null=True, default="Default Description")
     upload_date = models.DateTimeField(auto_now_add=True)
