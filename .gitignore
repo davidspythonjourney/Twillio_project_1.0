@@ -1,0 +1,9 @@
+# Ignore SQL database files
+*.sqlite
+*.sqlite3
+
+# Ignore .DS_Store files (macOS Finder metadata)
+.DS_Store
+
+# Ignore other cache files
+__pycache__/
