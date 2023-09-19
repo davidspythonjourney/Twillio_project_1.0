@@ -39,6 +39,8 @@ cd "C:\Program Files\Python 3.11\"
 
 ```
 
+you should also add a ".env" file with your email address(to send emails) and your twilio account(to send text messages). the code is configured to conect to a .env file form inside the the projects root directory(you may want to change the variable names accordingly) this goes for the RD_texting directory and the tasks.py file
+
 # Usage
 
 Before you can interact with the Twilio Project 1.0 on your local server, follow these steps:
