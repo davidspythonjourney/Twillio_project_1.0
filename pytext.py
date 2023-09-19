@@ -35,5 +35,5 @@ def email_sender(email: str, name: str, content: str):
     
 # email_sender("dovidyl@gmail.com", "david", "it works!")
 
-# message_sender("+972548199961", "Hi Roi this is RD_texting, how are you!")
+message_sender("+972587701122", "Hi Roi this is RD_texting, how are you!")
 

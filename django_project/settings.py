@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from datetime import timedelta
+
 
 load_dotenv()
 
@@ -39,6 +41,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_crontab',
     'RD_texting.apps.RDTextingConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
@@ -139,6 +142,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+#setting up password reset via email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -162,8 +166,26 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "RD_texting-main"
 
 LOGIN_URL = "login"
-#setting up password reset via email
 
 
 
+# Celery Configuration
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
 
+# Define the location for your task modules (change this based on your project structure).
+CELERY_IMPORTS = (
+    'RD_texting.tasks',  # Replace 'myapp' with the name of your app containing tasks
+)
+
+
+# Celery Beat settings: decides when the program will wake up
+CELERY_BEAT_SCHEDULE = {
+    'send-messages-task': {
+        'task': 'RD_texting.tasks.send_messages',  # Task name
+        'schedule': timedelta(minutes=30),  
+    },
+}
