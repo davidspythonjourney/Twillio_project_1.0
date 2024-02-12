@@ -37,5 +37,5 @@ email = ""
 phomne_num = ""
 email_sender(email, "david", "it works!")
 
-message_sender(phomne_num , "Hi Roi this is RD_texting, how are you!")
+message_sender(phomne_num , "Hi Roi this is RD texting, how are you!")
 
