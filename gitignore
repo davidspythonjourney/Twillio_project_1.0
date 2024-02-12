@@ -7,3 +7,6 @@
 
 # Ignore other cache files
 __pycache__/
+
+# Ignore all __pycache__ directories recursively
+**/__pycache__/
